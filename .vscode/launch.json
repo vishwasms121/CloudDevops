@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringSecurityCustomUserRegistrationApplication<spring-security-custom-user-registration-demo-thymeleaf-spring-boot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.luv2code.springsecurity.demo.SpringSecurityCustomUserRegistrationApplication",
+            "projectName": "spring-security-custom-user-registration-demo-thymeleaf-spring-boot",
+            "args": ""
+        }
+    ]
+}
