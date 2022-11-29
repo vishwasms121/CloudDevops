@@ -20,10 +20,7 @@
         th:object="${customer}"
         method="POST"
       >
-        <div
-          class="container text-center mt-2 col-md-12"
-          style="border: yellowgreen"
-        >
+        <div class="container text-center mt-2 col-md-12">
           <div class="mb-2 mr-3">
             <label class="mr-3" style="width: 120px; padding-right: 10px"
               >Sender Name:
@@ -33,7 +30,6 @@
               type="text"
               th:field="*{sourceName}"
               placeholder="Sender name"
-              style="border: hidden"
             />
           </div>
           <div class="mb-2">
@@ -136,6 +132,11 @@
           </div>
           <div class="mb-2">
             <button type="submit">Submit</button>
+          </div>
+          <div>
+            <form th:action="@{/}" method="">
+              <input type="submit" value="Back" />
+            </form>
           </div>
         </div>
       </form>

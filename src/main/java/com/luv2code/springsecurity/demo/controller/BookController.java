@@ -53,7 +53,7 @@ public class BookController {
         }
         theCustomer.setTrackId(num);
         double weight=theCustomer.getContainerWeight();
-        double price=weight*12;
+        double price=Math.round(weight*12);
         theCustomer.setTotalPrice(price);
         System.out.println(num);
 
