@@ -90,6 +90,13 @@ public class BookController {
 		return "/shipment-form";			
 	}
 
+    @GetMapping("/deleteCustomer")
+    public String delete(@RequestParam("employeeId") int theId){
+        theCustomerService.deleteById(theId);
+
+        return "confirm";
+    }
+
     @PostMapping("/save")
     public String save1(@ModelAttribute("shipmentval") Customer theCustomer){
 

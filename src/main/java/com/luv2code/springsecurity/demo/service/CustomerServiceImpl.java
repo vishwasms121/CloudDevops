@@ -31,6 +31,20 @@ public class CustomerServiceImpl implements CustomerService {
         return theCustomerDao.findAll();
     }
 
+    // @Override
+    // public Customer findById(int theId) {
+    //     Optional<Customer> result=theCustomerDao.findById(theId);
+
+    //     Customer customer=null;
+    //     if(result.isPresent()){
+    //         customer =result.get();
+    //     }else{
+    //         throw new RuntimeException("Did not find employee id - " + theId);
+    //     }
+        
+    //     return CustomerDao.deleteById(result);
+    // }
+
     @Override
     public Customer findById(int theId) {
         Optional<Customer> result=theCustomerDao.findById(theId);
@@ -65,6 +79,12 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
         return results;
+    }
+
+    @Override
+    public void deleteById(int theId) {
+        // TODO Auto-generated method stub
+        theCustomerDao.deleteById(theId);
     }
 
     

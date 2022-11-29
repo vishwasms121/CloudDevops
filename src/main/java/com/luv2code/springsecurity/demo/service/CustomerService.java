@@ -16,4 +16,6 @@ public interface CustomerService {
 
     public List<Customer> findByTrackId(int trackId);
 
+    public void deleteById(int theId);
+
 }
