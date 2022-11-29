@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en" xmlns:th="http://www.thymeleaf.org">
+    <title> </title>
+  </head>
+  <body bgcolor="" text="black" style="max-width: 500px; margin: auto">
+    <h1>Select Your Choice:</h1>
+    <!-- <table width="100%" bgcolor=""> -->
+    <!-- <tr> -->
+    <!-- <td> -->
+    <div>
+      <a
+        th:href="@{/book/showCustomerForm}"
+        class="btn btn-primary"
+        role="button"
+        aria-pressed="true"
+        onMouseOver="this.style.color='#0F0'"
+        onMouseOut="this.style.color='#00F'"
+        >Book a Item</a
+      >
+      </div>
+      <!-- </td> -->
+      <!-- <td> -->
+      <div>
+      <a
+        th:href="@{/book/showFormForUpdate}"
+        class="btn btn-primary"
+        role="button"
+        aria-pressed="true"
+        >Update Item</a
+      >
+      </div>
+      <!-- </td> -->
+
+      <!-- <td> -->
+      <!-- <div> -->
+      <form th:action="@{/logout}" method="POST">
+        <input type="submit" value="Logout" />
+      </form>
+    </div>
+    <!-- </td> -->
+    <!-- </tr> -->
+    <!-- </table> -->
+    <div>
+      <form th:action="@{/book/searchshipment}">
+        <input type="search" name="trackid" placeholder="Search track Id" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </body>
+</html>

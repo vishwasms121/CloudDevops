@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Update Page</title>
+    </head>
+    <body>
+        <div>
+            <form action="#" th:action="@{/book/updatethefield}" th:object="${update}" method="POST">
+                Track Id: <input type="text" th:field="*{trackId}" placeholder="track Id">
+                Update Shipment: <input type="text" th:field="*{shipment}" placeholder="shipment">
+            </form>
+            
+        </div>
+    </body>
+</html>

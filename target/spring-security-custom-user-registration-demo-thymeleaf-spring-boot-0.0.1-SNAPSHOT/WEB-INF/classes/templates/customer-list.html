@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>list</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <div>
+        <form th:action="@{/book/search}">
+          <input type="search" name="trackid" placeholder="Search track Id" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Track Id</th>
+            <th>Shipment</th>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="tempcustomer : ${customer}">
+            <td th:text="${tempcustomer.trackId}"></td>
+            <td th:text="${tempcustomer.shipment}"></td>
+            <td>
+              <a
+                th:href="@{/book/showFormForUpdateShipment(employeeId=${tempcustomer.id})}"
+                class="btn btn-info btn-sm"
+              >
+                Update
+              </a>
+            </td>
+            <td>
+              <a
+                th:href="@{/book/deleteCustomer(employeeId=${tempcustomer.id})}"
+                class="btn btn-danger btn-sm"
+              >
+                Delete
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
