@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.ObjectIdGenerators.StringIdGenerator;
+
 @Entity
 @Table(name = "booking_detail")
 public class Customer {
@@ -32,7 +34,7 @@ public class Customer {
     private String sourceState;
 
     @Column(name = "source_pincode")
-    private int sourcePincode;
+    private String sourcePincode;
 
     @Column(name = "source_phone")
     private String sourcePhone;
@@ -56,7 +58,7 @@ public class Customer {
     private String recieverState;
 
     @Column(name = "reciever_pincode")
-    private int recieverPincode;
+    private String recieverPincode;
 
     @Column(name = "reciever_phone")
     private String recieverPhone;
@@ -68,8 +70,8 @@ public class Customer {
     }
 
     public Customer(int trackId, String sourceName, String sourceAddress, String sourceCity, String sourceState,
-            int sourcePincode, String sourcePhone, double containerWeight, double totalPrice, String recieverName,
-            String recieverAddress, String recieverCity, String recieverState, int recieverPincode,
+            String sourcePincode, String sourcePhone, double containerWeight, double totalPrice, String recieverName,
+            String recieverAddress, String recieverCity, String recieverState, String recieverPincode,
             String recieverPhone, String shipment) {
         this.trackId = trackId;
         this.sourceName = sourceName;
@@ -90,8 +92,8 @@ public class Customer {
     }
 
     public Customer(int id, int trackId, String sourceName, String sourceAddress, String sourceCity, String sourceState,
-            int sourcePincode, String sourcePhone, double containerWeight, double totalPrice, String recieverName,
-            String recieverAddress, String recieverCity, String recieverState, int recieverPincode,
+            String sourcePincode, String sourcePhone, double containerWeight, double totalPrice, String recieverName,
+            String recieverAddress, String recieverCity, String recieverState, String recieverPincode,
             String recieverPhone, String shipment) {
         this.id = id;
         this.trackId = trackId;
@@ -160,11 +162,11 @@ public class Customer {
         this.sourceState = sourceState;
     }
 
-    public int getSourcePincode() {
+    public String getSourcePincode() {
         return sourcePincode;
     }
 
-    public void setSourcePincode(int sourcePincode) {
+    public void setSourcePincode(String sourcePincode) {
         this.sourcePincode = sourcePincode;
     }
 
@@ -224,11 +226,11 @@ public class Customer {
         this.recieverState = recieverState;
     }
 
-    public int getRecieverPincode() {
+    public String getRecieverPincode() {
         return recieverPincode;
     }
 
-    public void setRecieverPincode(int recieverPincode) {
+    public void setRecieverPincode(String recieverPincode) {
         this.recieverPincode = recieverPincode;
     }
 

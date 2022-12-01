@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.luv2code.springsecurity</groupId>
-	<artifactId>spring-security-custom-user-registration</artifactId>
+	<artifactId>Courier-Service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-security-custom-user-registration</name>
-	<description>Spring Security and Thymeleaf project for Spring Boot</description>
+	<description>Courier Service</description>
 	<packaging>war</packaging>
 
 	<properties>
