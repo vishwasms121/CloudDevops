@@ -6,6 +6,6 @@ token	   = "IQoJb3JpZ2luX2VjEHQaCXVzLWVhc3QtMSJGMEQCIChTNuGa2vNmI9GUZX4PCAa1zqoC
 
 instance_name = "x21205825-Sonar-Devops"
 
-instance_type = "t2.micro"
+instance_type = "t2.medium"
 
 ami_id = "ami-01cae1550c0adea9c" 
