@@ -18,7 +18,7 @@
       command: rm -rf {{ tomcat_path }}/webapps/Courier-Service-0.0.1-SNAPSHOT*
       changed_when: false
     - name: Copy the WAR file from Jenkins server to Tomcat server
-      command: scp -r root@3.253.97.234:/var/lib/jenkins/workspace/courier-service-maven/target/Courier-Service-0.0.1-SNAPSHOT.war root@63.32.47.104:/home/ec2-user/apache-tomcat-9.0.69/webapps
+      command: scp -r root@3.253.97.234:/var/lib/jenkins/workspace/courier-service-upstream/target/Courier-Service-0.0.1-SNAPSHOT.war root@63.32.47.104:/home/ec2-user/apache-tomcat-9.0.69/webapps
       changed_when: false
     - name: ==> start tomcat ,path = "{{ tomcat_path }}/bin/"
       shell: setsid /bin/sh -i -c "{{ tomcat_path }}/bin/startup.sh"
