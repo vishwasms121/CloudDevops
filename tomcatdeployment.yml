@@ -1,0 +1,33 @@
+---
+- hosts: tomcat
+  become: true
+  vars:
+    tomcat_folder: apache-tomcat-9.0.69
+    tomcat_path: /home/ec2-user/{{ tomcat_folder }}
+    grep_string: "[/]/home/ec2-user/{{ tomcat_folder }}"
+  tasks:
+    - name: ==> stop tomcat
+      command: sh {{ tomcat_path }}/bin/shutdown.sh
+      changed_when: false
+    - name: ==> Check if Apache is running
+      shell: ps aux | grep '{{ grep_string}}' | awk '{print $2}'
+      ignore_errors: yes
+      changed_when: false
+      register: service_apache_status
+    - name: ==> Remove the existing war in Tomcat.
+      command: rm -rf {{ tomcat_path }}/webapps/Courier-Service-0.0.1-SNAPSHOT*
+      changed_when: false
+    - name: Copy the WAR file from Jenkins server to Tomcat server
+      command: scp -r root@3.253.97.234:/var/lib/jenkins/workspace/courier-service-maven/target/Courier-Service-0.0.1-SNAPSHOT.war root@63.32.47.104:/home/ec2-user/apache-tomcat-9.0.69/webapps
+      changed_when: false
+    - name: ==> start tomcat ,path = "{{ tomcat_path }}/bin/"
+      shell: setsid /bin/sh -i -c "{{ tomcat_path }}/bin/startup.sh"
+      changed_when: false
+    - name: ==> sleep 45s
+      command: sleep 45s
+      changed_when: false
+    - name: Check if Apache is running
+      shell: ps aux | grep '{{ grep_string}}' | awk '{print $2}'
+      ignore_errors: yes
+      changed_when: false
+      register: service_apache_status
