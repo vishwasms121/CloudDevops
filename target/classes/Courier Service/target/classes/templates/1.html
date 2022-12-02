@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en" xmlns:th="http://www.thymeleaf.org">
+    <title> </title>
+  </head>
+  <style>
+    .flex-container {
+      display: flex;
+      /* background-color: DodgerBlue; */
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .flex-container > div {
+      background-color: #a4ecec;
+      margin: 5px;
+      padding: 10px;
+      font-size: 20px;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+    h1 {
+      display: flex;
+      padding-left: 100px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 40px;
+    }
+  </style>
+  <body
+    background="https://img.freepik.com/free-vector/loading-workman-carrying-boxes_74855-14096.jpg?w=1000"
+    bgcolor=""
+    text="black"
+    style="max-width: 500px; margin: auto"
+  >
+    <h1>Courier Service</h1>
+    <!-- <table width="100%" bgcolor=""> -->
+    <!-- <tr> -->
+    <!-- <td> -->
+    <div class="flex-container">
+      <div>
+        <a
+          th:href="@{/book/showCustomerForm}"
+          class="btn btn-primary"
+          role="button"
+          aria-pressed="true"
+          onMouseOver="this.style.color='#ff0000'"
+          onMouseOut="this.style.color='#00F'"
+          >Book an Item</a
+        >
+      </div>
+      <!-- </td> -->
+      <!-- <td> -->
+      <div>
+        <a
+          th:href="@{/book/showFormForUpdate}"
+          class="btn btn-primary"
+          role="button"
+          aria-pressed="true"
+          onMouseOver="this.style.color='#ff0000'"
+          onMouseOut="this.style.color='#00F'"
+          >Update Item</a
+        >
+      </div>
+
+      <!-- </td> -->
+
+      <!-- <td> -->
+      <div>
+        <form th:action="@{/logout}" method="POST">
+          <input type="submit" style="font-size: medium" value="Logout" />
+        </form>
+      </div>
+
+      <!-- </td> -->
+      <!-- </tr> -->
+      <!-- </table> -->
+      <div>
+        <form th:action="@{/book/searchshipment}">
+          <input type="search" name="trackid" placeholder="Search track Id" />
+          <button type="submit" style="font-size: medium">Search</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

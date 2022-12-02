@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Shipment</title>
+  </head>
+  <body>
+    <div>
+      <h1>Tracking Reciept</h1>
+    </div>
+    <div>
+      <table th:each="tempCustomer :${customer}">
+        <p>
+          <strong>Track Id: </strong
+          ><span th:text="${tempCustomer.trackId}"></span>
+        </p>
+        <p>
+          <strong>Sender Name: </strong
+          ><span th:text="${tempCustomer.sourceName}"></span>
+        </p>
+        <p>
+          <strong>Source Address: </strong
+          ><span th:text="${tempCustomer.sourceAddress}"></span>
+        </p>
+        <p>
+          <strong>Souce City: </strong
+          ><span th:text="${tempCustomer.sourceCity}"></span>
+        </p>
+        <p>
+          <strong>Source State: </strong
+          ><span th:text="${tempCustomer.sourceState}"></span>
+        </p>
+        <p>
+          <strong>Source Pincode: </strong
+          ><span th:text="${tempCustomer.sourcePincode}"></span>
+        </p>
+        <p>
+          <strong>Source Phone: </strong
+          ><span th:text="${tempCustomer.sourcePhone}"></span>
+        </p>
+        <p>
+          <strong>Container Weight: </strong
+          ><span th:text="${tempCustomer.containerWeight}"></span>
+        </p>
+        <p>
+          <strong>Parcel Price: </strong
+          ><span th:text="${tempCustomer.totalPrice}"></span>
+        </p>
+        <p>
+          <strong>Reciever Name: </strong
+          ><span th:text="${tempCustomer.recieverName}"></span>
+        </p>
+        <p>
+          <strong>Reciever Address: </strong
+          ><span th:text="${tempCustomer.recieverAddress}"></span>
+        </p>
+        <p>
+          <strong>Reciever City: </strong
+          ><span th:text="${tempCustomer.recieverCity}"></span>
+        </p>
+        <p>
+          <strong>Reciever State: </strong
+          ><span th:text="${tempCustomer.recieverState}"></span>
+        </p>
+        <p>
+          <strong>Reciever Pincode: </strong
+          ><span th:text="${tempCustomer.recieverPincode}"></span>
+        </p>
+        <p>
+          <strong>Reciever Phone: </strong
+          ><span th:text="${tempCustomer.recieverPhone}"></span>
+        </p>
+      </table>
+    </div>
+    <div>
+      <form th:action="@{/}" method="">
+        <button>Back</button>
+      </form>
+    </div>
+  </body>
+</html>

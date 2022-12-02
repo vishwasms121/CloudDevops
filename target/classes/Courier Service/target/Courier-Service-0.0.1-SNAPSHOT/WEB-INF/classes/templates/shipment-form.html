@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>shipment</title>
+  </head>
+  <body>
+    <div>
+      <h2>update</h2>
+      <form th:action="@{/book/save}" th:object="${shipmentval}" method="POST">
+        <input type="hidden" th:field="*{id}" />
+        track id:
+        <input type="text" th:field="*{trackId}" placeholder="track Id" />
+        <div>
+          shipment:
+          <input
+            type="text"
+            th:field="*{shipment}"
+            placeholder="Update shipment"
+          />
+        </div>
+
+        <div>
+          Sender Name:
+          <input
+            type="text"
+            th:field="*{sourceName}"
+            placeholder="Sender name"
+          />
+        </div>
+        <div>
+          Sender Address:
+          <input
+            type="text"
+            th:field="*{sourceAddress}"
+            placeholder="Sender Address"
+          />
+        </div>
+        <div>
+          Sender City:
+          <input
+            type="text"
+            th:field="*{sourceCity}"
+            placeholder="Sender City"
+          />
+        </div>
+        <div>
+          Sender State:
+          <input
+            type="text"
+            th:field="*{sourceState}"
+            placeholder="Sender State"
+          />
+        </div>
+        <div>
+          Sender Pincode:
+          <input
+            type="text"
+            th:field="*{sourcePincode}"
+            placeholder="Sender Pincode"
+          />
+        </div>
+        <div>
+          Sender Phone
+          <input
+            type="text"
+            th:field="*{sourcePhone}"
+            placeholder="Sender Phone"
+          />
+        </div>
+        <div>
+          Container weight:
+          <input
+            type="text"
+            th:field="*{containerWeight}"
+            placeholder="Container weight"
+          />
+        </div>
+        <div>
+          Recipient Name:
+          <input
+            type="text"
+            th:field="*{recieverName}"
+            placeholder="Recipient Name"
+          />
+        </div>
+        <div>
+          Recipient Address:
+          <input
+            type="text"
+            th:field="*{recieverAddress}"
+            placeholder="Recipient Address"
+          />
+        </div>
+        <div>
+          Recipient City:
+          <input
+            type="text"
+            th:field="*{recieverCity}"
+            placeholder="Recipient City"
+          />
+        </div>
+        <div>
+          Recipient State:
+          <input
+            type="text"
+            th:field="*{recieverState}"
+            placeholder="Recipient State"
+          />
+        </div>
+        <div>
+          Recipient Pincode:
+          <input
+            type="text"
+            th:field="*{recieverPincode}"
+            placeholder="Recipient Pincode"
+          />
+        </div>
+        <div>
+          Recipient Phone:
+          <input
+            type="text"
+            th:field="*{recieverPhone}"
+            placeholder="Recipient Phone"
+          />
+        </div>
+        <button type="submit">save</button>
+      </form>
+      <div>
+        <form th:action="@{/}" method="">
+          <button>Back</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
