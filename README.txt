@@ -13,6 +13,9 @@ For docs on Spring Security and Thymeleaf integration, see this link
 
 
 A couple of high-level changes
+To start making an app in springboot firstly you have to initialize an application using Spring Boot initializer
+https://start.spring.io/
+Add dependencies :- web, lambok,security.
 
 1. Add the Thymeleaf pom entries
 
