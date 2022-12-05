@@ -1,10 +1,9 @@
 SPRING SECURITY, THYMELEAF and Spring Boot
 ==========================================
 
-A student asked for a Thymeleaf version of the application. This version makes use of Spring Boot
 
 Full solution code is available at this link:
-
+https://github.com/AnshulBharadwaj73/CloudDevops.git
 
 For docs on Spring MVC and Thymeleaf integration, see this link
 - https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html
@@ -31,7 +30,8 @@ A couple of high-level changes
 When Spring Boot finds Thymeleaf dependency in the Maven POM file, it automatically configures Thymeleaf template engine. 
 No need to manually configure Thymeleaf in our code since it is auto-configured by Spring Boot.
 
-3. Create Thymeleaf views
-See code examples in: src/main/resources/templates
+3. For Database Configuration for AWS MySQL:
+You have to create a DB and provide the endpoint of your DB to the application.property file so the data can be save in DB.
+
 
 
